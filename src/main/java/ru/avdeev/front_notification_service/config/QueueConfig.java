@@ -8,4 +8,7 @@ public class QueueConfig {
 
     @Value("${rabbit.queueFrontIn}")
     public String queueFrontIn;
+
+    @Value("${rabbit.queueTelegramIn}")
+    public String queueTelegramIn;
 }
