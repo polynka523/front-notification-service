@@ -13,6 +13,7 @@ spring:
 queues:
   frontIn: front.in
   telegramIn: telegram.in
+  orderIn: order.in
 bot:
   token: 7487503506:AAHs3DkvFz_8uzo8mY_XWSUEv5s-6io4qGc
   name: Cnttops_bot

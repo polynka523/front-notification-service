@@ -41,13 +41,14 @@ public class Listener {
         String type = Objects.requireNonNull(message.getHeaders().get("type")).toString();
         Booking booking = message.getPayload();
         receiveLog("telegramInListener", type, booking);
+        String uid = booking.id().toString();
 
         String msgText = String.format("Забронирован стол 2. Дата: %1$td-%1$tm-%1$tY. Время начала: %2$s. Продолжительность: %3$1.1f ч.",
                 booking.bookingDate(),
                 booking.startTime(),
                 booking.count()
         );
-        botProperties.getReceivers().forEach(chatId -> bot.sendMessage(chatId, msgText));
+        botProperties.getReceivers().forEach(chatId -> bot.sendMessage(chatId, msgText,uid));
         log.info("Message sent to telegram: {}", msgText);
     }
 
